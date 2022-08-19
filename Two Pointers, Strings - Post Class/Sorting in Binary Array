@@ -1,0 +1,51 @@
+/* Author = ANIK MITRA */
+/* Language = JAVA */
+/* Address = Kolkata,WB,INDIA (221716)*/
+
+/******************************************************************************************************************************************/
+/***********Start****************/
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+                      // Your code here
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] a = new int[n];
+        for(int i=0;i<n;i++)
+        {
+            a[i] = sc.nextInt();
+        }
+        int l = 0;
+        int r = n-1;
+        while(l<r)
+        {
+            if(a[l]==0 && a[r]==1)
+            {
+                l++;
+                r--;
+            }
+            else if(a[l]!=0)
+            {
+                a[l] = a[r];
+                a[r] = 1;
+                r--;
+            }
+             else if(a[l]!=1)
+             {
+                a[r] = a[r];
+                a[l] = 0;
+                l++; 
+             }
+        }
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(a[i] +" ");
+        }
+    }
+}
+/******************************************************************************************************************************************/
+/***********End****************/
