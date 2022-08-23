@@ -1,0 +1,46 @@
+/* Author = ANIK MITRA */
+/* Language = JAVA */
+/* Address = Kolkata,WB,INDIA (221716)*/
+
+/******************************************************************************************************************************************/
+/***********Start****************/
+public static ArrayList<Integer> threeWayPartition(ArrayList<Integer> A, int lowVal, int highVal)
+{
+	// Your code here
+	int n = A.size();
+	ArrayList<Integer> arr = A;
+	int start = 0,end = n-1;
+	for(int i=0;i<=end;)
+	{
+		//swapping the element with those at start
+		//if array element is less than lowVal
+		if (arr.get(i) < lowVal)
+		{
+			int temp=arr.get(i);
+			arr.add(i,arr.get(start));
+			arr.remove(i+1);
+			arr.add(start,temp);
+			arr.remove(start+1);
+			i++;
+			start++;
+		}
+		//swapping  the element with those at end
+		//if array element is greater than highVal
+		else if (arr.get(i) > highVal)
+		{
+			int temp=arr.get(i);
+			arr.add(i,arr.get(end));
+			arr.remove(i+1);
+			arr.add(end,temp);
+			arr.remove(end+1);
+			end--;
+		}
+
+		//else just move ahead
+		else
+		i++;
+	}
+	return arr;
+}
+/******************************************************************************************************************************************/
+/***********End****************/
