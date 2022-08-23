@@ -1,0 +1,63 @@
+/* Author = ANIK MITRA */
+/* Language = JAVA */
+/* Address = Kolkata,WB,INDIA (221716)*/
+
+/******************************************************************************************************************************************/
+/***********Start****************/
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args)throws IOException {
+                      // Your code here
+        BufferedReader bi = new BufferedReader(
+        new InputStreamReader(System.in));
+        int t = Integer.parseInt(bi.readLine());
+        while(t>0)
+        {
+            t--;
+            String[] input = bi.readLine().split(" ");
+            int n = Integer.parseInt(input[0]);
+            int k = Integer.parseInt(input[1]);
+            String[] arr = bi.readLine().split(" ");
+
+            HashMap<Integer,Integer>map = new HashMap<>();
+            int sum = 0;int maxLen = 0;
+
+            //traverse the given array
+            for (int i=0;i<n;i++)
+            {
+                //accumulate sum
+                sum += Integer.parseInt(arr[i]);
+
+                //when subarray starts from index '0'
+                if(sum == k)
+                maxLen=i+1;
+
+                //make an entry for'sum' if it is 
+                //not present in 'map'
+
+                if(!map.containsKey(sum))
+                {
+                    map.put(sum,i);
+                }
+
+                //check if 'sum-k' is present in 'map'
+                //or not
+
+                if(map.containsKey(sum - k))
+                {
+                    //update maxLen
+                    if(maxLen<(i-map.get(sum-k)))
+                    maxLen = i - map.get(sum-k);
+                }
+
+            }
+            System.out.println(maxLen);
+        }
+    }
+}
+/******************************************************************************************************************************************/
+/***********End****************/
