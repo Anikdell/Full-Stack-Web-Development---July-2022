@@ -1,0 +1,27 @@
+/* Author = ANIK MITRA */
+/* Language = JAVA */
+/* Address = Kolkata,WB,INDIA (221716)*/
+
+/******************************************************************************************************************************************/
+/***********Start****************/
+// create class here and its methods as well
+class SumCalculator{
+    public int num1,num2;
+    SumCalculator(int _num1,int _num2){
+        num1=_num1;
+        num2=_num2;
+
+    }
+    public int sum(){
+        return num1+num2;
+    }
+    public int sum2(int a,int b){
+        return a+b;
+    }
+    public int fromObject(SumCalculator obj1,SumCalculator obj2){
+        return obj1.sum() + obj2.sum();
+    }
+}
+
+/******************************************************************************************************************************************/
+/***********End****************/
