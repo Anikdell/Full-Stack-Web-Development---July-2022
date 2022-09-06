@@ -1,0 +1,32 @@
+/* Author = ANIK MITRA */
+/* Language = JAVA */
+/* Address = Kolkata,WB,INDIA (221716)*/
+
+/******************************************************************************************************************************************/
+/***********Start****************/
+// your code goes here
+class BankAccount{
+    public int balance;
+    public String name;
+    BankAccount(int bal,String _name)
+    {
+        balance=bal;
+        name =_name;
+    }
+    public void depositFund(int fund){
+        balance += fund;
+    }
+public boolean withdrawFund(int fund){
+        if(fund < balance)
+        {
+            balance -= fund;
+            return true ;
+        }
+        else{
+            return false;
+        }
+       
+    }
+}
+/******************************************************************************************************************************************/
+/***********End****************/
