@@ -1,0 +1,31 @@
+/* Author = ANIK MITRA */
+/* Language = JAVA */
+/* Address = Kolkata,WB,INDIA (221716)*/
+
+/******************************************************************************************************************************************/
+/***********Start****************/
+class Calculator implements CalculatorInterface{
+    public int num1;
+    public int num2;
+    Calculator(){
+        num1=num2=0;
+    }
+    Calculator(int a, int b){
+        num1=a;
+        num2=b;
+    }
+    public int add(){
+        return num1+num2;
+    }
+    public int add(int a,int b){
+        return a+b;
+    }
+    public int sub(){
+        return num1-num2;
+    }
+    public int sub(int a,int b){
+        return a-b;
+    }
+}
+/******************************************************************************************************************************************/
+/***********End****************/
