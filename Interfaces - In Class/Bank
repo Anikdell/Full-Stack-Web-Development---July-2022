@@ -1,0 +1,44 @@
+/* Author = ANIK MITRA */
+/* Language = JAVA */
+/* Address = Kolkata,WB,INDIA (221716)*/
+
+/******************************************************************************************************************************************/
+/***********Start****************/
+/*
+interface IBank{
+    public void deposit(int fund);
+    public boolean withdraw(int fund);
+    public int getBalance();
+    public  int getAccountNumber();
+}
+*/
+
+//implement interface here
+class Bank implements IBank{
+    public int balance;
+    public String name;
+    public int accountNumber;
+    Bank(int balance,String name,int an){
+        this.balance=balance;
+        this.name=name;
+        this.accountNumber=an;
+    }
+    public void deposit(int fund){
+        this.balance += fund;
+    };
+    public boolean withdraw(int fund){
+        if(fund > balance){
+            return false;
+        }
+        balance -= fund;
+        return true;
+    };
+    public int getBalance(){
+        return balance;
+    };
+    public int getAccountNumber(){
+        return accountNumber;
+    }
+}
+/******************************************************************************************************************************************/
+/***********End****************/
