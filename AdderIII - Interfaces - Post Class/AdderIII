@@ -1,0 +1,33 @@
+/* Author = ANIK MITRA */
+/* Language = JAVA */
+/* Address = Kolkata,WB,INDIA (221716)*/
+
+/******************************************************************************************************************************************/
+/***********Start****************/
+// implement you interface here
+class AdderII implements Adder{
+    public int num1;
+    public int num2;
+
+    public AdderII(){
+        num1=0;
+        num2=0;
+    }
+    public AdderII(int a,int b){
+        num1 = a;
+        num2 = b;
+    }
+    public int add(){
+        return (num1+num2);
+    }
+    public int add(int a,int b){
+        return (a*a+b*b);
+    }
+    public int add(int a,int b,int c){
+        num1 =add(num1,a);
+        num2 =add(num2,b);
+        return (num1 + num2 - c*c);
+    }
+}
+/******************************************************************************************************************************************/
+/***********End****************/
