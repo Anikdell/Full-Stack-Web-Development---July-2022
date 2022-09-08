@@ -1,0 +1,48 @@
+/* Author = ANIK MITRA */
+/* Language = JAVA */
+/* Address = Kolkata,WB,INDIA (221716)*/
+
+/******************************************************************************************************************************************/
+/***********Start****************/
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+    public static void main (String[] args) {
+                      // Your code here
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[] a = new int[n];
+        int[] b = new int[m];
+
+        for(int i = 0;i<n;i++){
+            a[i] = sc.nextInt();
+        }
+        for(int i = 0;i<m;i++){
+            b[i] = sc.nextInt();
+        }
+        int M = n+m;
+        int[] arr = new int[M];
+        System.arraycopy(a,0,arr,0,n);
+        System.arraycopy(b,0,arr,n,m);
+        Arrays.sort(arr);
+
+        if(M%2==0){
+            int x = M/2;
+            float p = arr[x];
+            float q = arr[x-1];
+            float ans = (p+q)/2;
+            System.out.format("%.2f",ans);
+        }
+        else{
+            int y = M/2;
+            float ans = arr[y];
+            System.out.format("%.2f",ans);
+        }
+    }
+}
+/******************************************************************************************************************************************/
+/***********End****************/
